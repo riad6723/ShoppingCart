@@ -1,0 +1,51 @@
+.nav{
+    display: flex;
+    width: 100%;
+    height: 50px;
+    justify-content: space-around;
+    background-color: aliceblue;
+}
+
+.title{
+    width: 25%;
+    text-align: center;
+    justify-content: center;
+    margin-top: 5px;
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.sup{
+    color: rgb(247, 8, 8);
+}
+
+.icon{
+    width: 30px;
+    height: 30px;
+    margin-top: 5px;
+    cursor: pointer;
+    color: black;
+}
+
+.Link{
+    text-decoration: none;
+    color: black;
+}
+
+.list{
+    display: flex;
+}
+
+.list li{
+    margin: 10px;
+    list-style: none;
+}
+
+.input{
+    height: 35px;
+    width: 250px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: rgb(235, 240, 245);
+    border: 1px solid rgb(8, 8, 8);
+}
