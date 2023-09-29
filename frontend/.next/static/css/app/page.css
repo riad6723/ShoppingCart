@@ -1,120 +1,141 @@
 /*!*******************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/components/Card/Card.module.css ***!
   \*******************************************************************************************************************************************************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,300,500,700);
 
-  .Card_wrapper__r1iDw {
-    height: 420px;
-    width: 654px;
-    margin: 50px auto;
-    border-radius: 7px 7px 7px 7px;
-    box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
-  }
-  
-  .Card_productImg__Zt_29 {
-    float: left;
-    height: 420px;
-    width: 327px;
-  }
-  
-  .Card_productImg__Zt_29 img {
-    border-radius: 7px 0 0 7px;
-  }
-  
-  .Card_productInfo___KM4j {
-    float: left;
-    height: 420px;
-    width: 327px;
-    border-radius: 0 7px 10px 7px;
-    background-color: #ffffff;
-  }
-  
-  .Card_productText__lKnuS {
-    height: 300px;
-    width: 327px;
-  }
-  
-  .Card_productText__lKnuS h1 {
-    margin: 0 0 0 38px;
-    padding-top: 52px;
-    font-size: 34px;
-    color: #474747;
-  }
-  
-  .Card_productText__lKnuS h1,
-  .Card_product-price-btn__fbLOp p {
-    font-family: 'Bentham', serif;
-  }
-  
-  .Card_productText__lKnuS h2 {
-    margin: 0 0 47px 38px;
-    font-size: 13px;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 400;
-    text-transform: uppercase;
-    color: #d2d2d2;
-    letter-spacing: 0.2em;
-  }
-  
-  .Card_productText__lKnuS p {
-    height: 125px;
-    margin: 0 0 0 38px;
-    font-family: 'Playfair Display', serif;
-    color: #8d8d8d;
-    line-height: 1.7em;
-    font-size: 15px;
-    font-weight: lighter;
-    overflow: hidden;
-  }
-  
-  .Card_productPriceBtn__KlfCt {
-    height: 103px;
-    width: 327px;
-    margin-top: 17px;
-    position: relative;
-  }
-  
-  .Card_productPriceBtn__KlfCt p {
-    display: inline-block;
-    position: absolute;
-    top: -13px;
+
+
+.Card_card__RlVbj {
+  width: 600px;
+  background: rgb(255, 255, 255);
+  margin: 0 auto;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  transition: all 0.3s;
+  display: flex;
+}
+
+
+.Card_photo__66X6h {
+  padding: 30px;
+  width: 45%;
+  text-align: center;
+}
+
+.Card_photo__66X6h img {
+  max-height: 240px;
+}
+
+.Card_description__eYvpH {
+  margin-top: 40px;
+  padding: 30px;
+  width: 55%;
+  border-left: 2px solid #efefef;
+}
+
+.Card_description__eYvpH h1 {
+  color: #515151;
+  padding-top: 15px;
+  margin: 0;
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.Card_description__eYvpH h2 {
+  color: #515151;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.Card_description__eYvpH h4 {
+  margin: 0;
+  color: #727272;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 12px
+}
+
+.Card_description__eYvpH button {
+
+  outline: 0;
+  border: 0;
+  background: none;
+  border: 1px solid #d9d9d9;
+  padding: 8px 0px;
+  margin-bottom: 30px;
+  margin-top: 15px;
+  color: #515151;
+  text-transform: uppercase;
+  width: 125px;
+  font-family: inherit;
+  margin-right: 5px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.Card_description__eYvpH button:hover {
+
+  border: 1px solid #aedaa6;
+  color: #aedaa6;
+  cursor: pointer;
+
+}
+/*!***********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/components/Navbar/Navbar.module.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************/
+.Navbar_nav__vVzDp{
+    display: flex;
+    width: 100%;
     height: 50px;
-    font-family: 'Trocchi', serif;
-    margin: 0 0 0 38px;
-    font-size: 28px;
-    font-weight: lighter;
-    color: #474747;
-  }
-  
-  .Card_span__3Ksp1 {
-    display: inline-block;
-    height: 50px;
-    font-family: 'Suranna', serif;
-    font-size: 25px;
-  }
-  
-  .Card_productPriceBtn__KlfCt button {
-    float: right;
-    display: block;
-    height: 50px;
-    width: 176px;
-    margin: 0 40px 0 16px;
-    box-sizing: border-box;
-    border: transparent;
-    border-radius: 60px;
-    font-family: 'Raleway', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: #ffffff;
-    background-color: #9cebd5;
+    justify-content: space-around;
+    background-color: aliceblue;
+    position: fixed;
+}
+
+.Navbar_title__rBl1N{
+    width: 25%;
+    text-align: center;
+    justify-content: center;
+    margin-top: 5px;
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.Navbar_sup__g4AAm{
+    color: rgb(247, 8, 8);
+}
+
+.Navbar_icon__b0Hko{
+    width: 30px;
+    height: 30px;
+    margin-top: 5px;
     cursor: pointer;
-    outline: none;
-  }
-  
-  .Card_productPriceBtn__KlfCt button:hover {
-    background-color: #79b0a1;
-  }
+    color: black;
+}
+
+.Navbar_Link__FNRgy{
+    text-decoration: none;
+    color: black;
+}
+
+.Navbar_list__iBgpj{
+    display: flex;
+}
+
+.Navbar_list__iBgpj li{
+    margin: 10px;
+    list-style: none;
+}
+
+.Navbar_input__r7tb5{
+    height: 35px;
+    width: 250px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: rgb(235, 240, 245);
+    border: 1px solid rgb(8, 8, 8);
+}
+
 /*!*******************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/app/page.module.css ***!
   \*******************************************************************************************************************************************************************************************************************************************************************/
@@ -122,4 +143,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    padding: 100px;
+}
+
+.page_link__36MaQ{
+    text-decoration: none;
 }

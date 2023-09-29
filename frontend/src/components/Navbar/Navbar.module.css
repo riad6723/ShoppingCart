@@ -4,6 +4,7 @@
     height: 50px;
     justify-content: space-around;
     background-color: aliceblue;
+    position: fixed;
 }
 
 .title{

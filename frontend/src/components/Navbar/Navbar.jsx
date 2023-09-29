@@ -4,12 +4,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import styles from './Navbar.module.css'
 import Link from 'next/link'
+import { useContext } from 'react'
+import { cartSizeContext } from '@/contexts/cartSizeContext'
 
 function Navbar() {
     const [searchKey,setSearchKey]=useState();
     const handleSearch=(e)=>{
         setSearchKey(e.target.value);
     }
+
+    const {cartSize}=useContext(cartSizeContext);
+
   return (
     <div>
       <nav className={styles.nav}>
@@ -24,10 +29,10 @@ function Navbar() {
         </div>
 
         <div className={styles.search}>
-            <input type="text" placeholder='search here...' className={styles.input} value={searchKey} onChange={e=>handleSearch(e)} />
+            <input type="text" placeholder='  search here...' className={styles.input} value={searchKey} onChange={e=>handleSearch(e)} />
         </div>
 
-        <Link href={'/products'} className={styles.Link}> <FontAwesomeIcon icon={faShoppingCart} className={styles.icon} /> <sup className={styles.sup}> {localStorage.getItem("numberOfItems")} </sup> </Link>
+        <Link href={'/products'} className={styles.Link}> <FontAwesomeIcon icon={faShoppingCart} className={styles.icon} /> <sup className={styles.sup}> {cartSize} </sup> </Link>
       </nav>
     </div>
   )

@@ -1,36 +1,39 @@
 "use client"
 import React from 'react';
 import styles from './Card.module.css';
+import { cartSizeContext } from '@/contexts/cartSizeContext';
+import { useContext } from 'react';
 
 function Card({item,cartObj}) {
   const {id,name,category,price,image}=item;
+
   const handleClick=()=>{
-    const updatedCart=[...cartObj.cart];
+  const updatedCart=[...cartObj.cart];
+
     for(let i=0;i<updatedCart.length;i++){
       if(updatedCart[i].id===item.id)return;
     }
+
     updatedCart.push(item);
     cartObj.setCart(updatedCart);
   }
+
+  const {cartSize,setCartSize}=useContext(cartSizeContext);
+  setCartSize(cartObj.cart.length);
+
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.productImg}>
-        <img src="http://bit.ly/2tMBBTd" height="420" width="327" alt="Product" />
-      </div>
-      <div className={styles.productInfo}>
-        <div className={styles.productText}>
-          <h1>{name}</h1>
-          <h2>{category}</h2>
-          <p>
-           Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum quidem doloremque ex ipsam voluptates vel eos recusandae consectetur hic harum, explicabo obcaecati dolores soluta. Molestias reiciendis nemo assumenda itaque iure.
-          </p>
-        </div>
-        <div className={styles.productPriceBtn}>
-          <p><span className={styles.span}>{price}</span>$</p>
-          <button type={styles.button} onClick={handleClick} >add to cart</button>
-        </div>
-      </div>
+    <div className={styles.card}>
+    <div className={styles.photo}>
+      <img src="https://s-media-cache-ak0.pinimg.com/236x/3b/36/ca/3b36ca3afe0fa0fd4984b9eee2e154bb.jpg"/>
     </div>
+    <div className={styles.description}>
+      <h2>Classic Peace Lily</h2>
+      <h4>Popular House Plant</h4>
+      <h1>$18</h1>
+      <button>Add to Cart</button>
+      <button>Remove</button>
+    </div>
+  </div>
   );
 }
 
