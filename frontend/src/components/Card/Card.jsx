@@ -7,7 +7,8 @@ import { useContext } from 'react';
 function Card({item,cartObj}) {
   const {id,name,category,price,image}=item;
 
-  const handleClick=()=>{
+  const handleAddClick=(e)=>{
+  e.preventDefault();
   const updatedCart=[...cartObj.cart];
 
     for(let i=0;i<updatedCart.length;i++){
@@ -18,6 +19,19 @@ function Card({item,cartObj}) {
     cartObj.setCart(updatedCart);
   }
 
+  const handleRemoveClick=(e)=>{
+    e.preventDefault();
+    const updatedCart=[...cartObj.cart];
+  
+      for(let i=0;i<updatedCart.length;i++){
+        if(updatedCart[i].id===item.id){
+          updatedCart.splice(i,1);
+          cartObj.setCart(updatedCart);
+          return;
+        }
+      }
+    }
+
   const {cartSize,setCartSize}=useContext(cartSizeContext);
   setCartSize(cartObj.cart.length);
 
@@ -27,11 +41,11 @@ function Card({item,cartObj}) {
       <img src="https://s-media-cache-ak0.pinimg.com/236x/3b/36/ca/3b36ca3afe0fa0fd4984b9eee2e154bb.jpg"/>
     </div>
     <div className={styles.description}>
-      <h2>Classic Peace Lily</h2>
-      <h4>Popular House Plant</h4>
-      <h1>$18</h1>
-      <button>Add to Cart</button>
-      <button>Remove</button>
+      <h2>{name}</h2>
+      <h4>{category}</h4>
+      <h1>${price}</h1>
+      <button onClick={e=>handleAddClick(e)} className={styles.addButton}>Add to Cart</button>
+      <button onClick={e=>handleRemoveClick(e)} className={styles.removeButton}>Remove</button>
     </div>
   </div>
   );

@@ -25,7 +25,7 @@ function Navbar() {
 
         <div className={styles.list}>
             <li >  <Link href={`/`}  className={styles.Link}> Shop </Link>  </li>         
-            <li >  <Link href={`/`} className={styles.Link}> contact Us </Link>  </li>        
+            <li >  <Link href={`/`} className={styles.Link}> Contact </Link>  </li>        
         </div>
 
         <div className={styles.search}>
