@@ -1,19 +1,35 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import styles from './Navbar.module.css'
 import Link from 'next/link'
-import { useContext } from 'react'
-import { cartSizeContext } from '@/contexts/cartSizeContext'
+import axios from 'axios'
+import {useCartSizeContext} from '@/contexts/cartSizeContext'
 
 function Navbar() {
     const [searchKey,setSearchKey]=useState();
+    const {cart,setProductsList}=useCartSizeContext();
+    const [newProductsList, setNewProductsList]=useState([]);
+
     const handleSearch=(e)=>{
         setSearchKey(e.target.value);
+        if(!e.target.value){
+          setProductsList(newProductsList);
+          return;
+        }
+
+      const filteredItems = newProductsList.filter((item) =>
+      item.name.toLowerCase().includes(e.target.value.toLowerCase())
+      )
+      setProductsList(filteredItems);
     }
 
-    const {cartSize}=useContext(cartSizeContext);
+    useEffect(()=>{
+      axios.get('http://localhost:5000/')
+      .then(response=>setNewProductsList(response.data))
+      .catch(err=>console.log(err))
+    },[])
 
   return (
     <div>
@@ -32,7 +48,7 @@ function Navbar() {
             <input type="text" placeholder='  search here...' className={styles.input} value={searchKey} onChange={e=>handleSearch(e)} />
         </div>
 
-        <Link href={'/products'} className={styles.Link}> <FontAwesomeIcon icon={faShoppingCart} className={styles.icon} /> <sup className={styles.sup}> {cartSize} </sup> </Link>
+        <Link href={'/products'} className={styles.Link}> <FontAwesomeIcon icon={faShoppingCart} className={styles.icon} /> <sup className={styles.sup}> {cart.length} </sup> </Link>
       </nav>
     </div>
   )

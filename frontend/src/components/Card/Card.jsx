@@ -4,36 +4,36 @@ import styles from './Card.module.css';
 import { cartSizeContext } from '@/contexts/cartSizeContext';
 import { useContext } from 'react';
 
-function Card({item,cartObj}) {
+function Card({item}) {
   const {id,name,category,price,image}=item;
+  const {cart,setCart}=useContext(cartSizeContext);
 
   const handleAddClick=(e)=>{
   e.preventDefault();
-  const updatedCart=[...cartObj.cart];
+  const updatedCart=[...cart];
 
     for(let i=0;i<updatedCart.length;i++){
       if(updatedCart[i].id===item.id)return;
     }
 
     updatedCart.push(item);
-    cartObj.setCart(updatedCart);
+    localStorage.setItem('cart',JSON.stringify(updatedCart));
+    setCart(updatedCart);
   }
 
   const handleRemoveClick=(e)=>{
     e.preventDefault();
-    const updatedCart=[...cartObj.cart];
+    const updatedCart=[...cart];
   
       for(let i=0;i<updatedCart.length;i++){
         if(updatedCart[i].id===item.id){
           updatedCart.splice(i,1);
-          cartObj.setCart(updatedCart);
+          localStorage.setItem('cart',JSON.stringify(updatedCart));
+          setCart(updatedCart);
           return;
         }
       }
     }
-
-  const {cartSize,setCartSize}=useContext(cartSizeContext);
-  setCartSize(cartObj.cart.length);
 
   return (
     <div className={styles.card}>

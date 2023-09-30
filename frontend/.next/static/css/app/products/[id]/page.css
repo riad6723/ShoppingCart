@@ -1,0 +1,70 @@
+/*!************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/app/products/[id]/Product.module.css ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************/
+.Product_product__l2__4{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* ProductCard.module.css */
+/* ProductCard.module.css */
+.Product_productCard__iQM4C {
+    display: flex;
+    border: 1px solid #ddd;
+    padding: 16px;
+    margin: 16px;
+    max-width: 500px;
+    height: 400px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .Product_productCard__iQM4C:hover {
+    transform: translateY(-5px);
+  }
+  
+  .Product_imageContainer__Wuto6 {
+    flex: 1 1; /* Image takes 1/3 of the space */
+    padding-right: 16px;
+  }
+  
+  .Product_productImage__7009X {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .Product_details__1w073 {
+    flex: 2 1; /* Details take 2/3 of the space */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  .Product_productName__MRa_1 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  .Product_productCategory__CZtTg {
+    color: #888;
+    margin-bottom: 8px;
+  }
+  
+  .Product_productDescription__8iKIF {
+    font-size: 12px;
+    line-height: 1.4;
+    color: #666;
+  }
+  
+  /* Add styles for the button or additional elements as needed */
+  
+  
+  

@@ -1,35 +1,38 @@
 "use client"
 import Card from "@/components/Card/Card"
 import styles from './page.module.css'
-import groceryItems from "../../data"
-import { useEffect, useState } from "react"
-import Navbar from '../components/Navbar/Navbar'
-import { cartSizeContext } from "@/contexts/cartSizeContext"
+import { useEffect, useContext } from "react"
 import Link from "next/link"
 import axios from 'axios'
+import { useCartSizeContext } from "@/contexts/cartSizeContext"
 
 export default function Home() {
-  const [cart,setCart]=useState([]);
-  const [cartSize,setCartSize]=useState(0);
-  const [productsList, setProductsList]=useState([]);
+  const {setCart,productsList,setProductsList}=useCartSizeContext();
 
   useEffect(()=>{
     axios.get('http://localhost:5000/')
-    .then(response=>setProductsList(response.data))
+    .then(response=>{setProductsList(response.data)})
     .catch(err=>console.log(err))
+
+    const storedJsonString=localStorage.getItem('cart');
+    if(storedJsonString){
+      const localCart=JSON.parse(storedJsonString);
+      setCart(localCart);
+    }
+    else{
+      localStorage.setItem('cart',JSON.stringify([]));
+      setCart([]);
+    }
   },[])
 
   return (
     <>
-    <cartSizeContext.Provider value={{cartSize,setCartSize}}>
-    <Navbar />
-
     <main className={styles.home}>
         {productsList.map((item,index)=>{
-          return  <div key={index}>  <Link href={`/products/${item.id}`} className={styles.link}> <Card item={item} cartObj={{cart,setCart}} /> </Link>  </div>  
+          return  <div key={index}>  <Link href={`/products/${item.id}`} className={styles.link}> <Card item={item} /> </Link>  </div>  
          })}
     </main>
-    </cartSizeContext.Provider>
+
     </>
   )
 }
