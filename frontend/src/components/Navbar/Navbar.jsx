@@ -37,7 +37,7 @@ function Navbar() {
       <nav className={styles.nav}>
 
         <div className={styles.title}>
-            Shopify
+            FreshCart
         </div>
 
         <div className={styles.list}>
@@ -49,7 +49,7 @@ function Navbar() {
             <input type="text" placeholder='  search here...' className={styles.input} value={searchKey} onChange={e=>handleSearch(e)} />
         </div>
 
-        <Link href={'/products'} className={styles.Link}> <FontAwesomeIcon icon={faShoppingCart} className={styles.icon} /> <sup className={styles.sup}> {cart.length} </sup> </Link>
+        <Link href={'/products/cart'} className={styles.Link}> <FontAwesomeIcon icon={faShoppingCart} className={styles.icon} /> <sup className={styles.sup}> {cart.length} </sup> </Link>
       </nav>
       {
         !clicked? <FontAwesomeIcon icon={faBars} className={styles.menueIcon} onClick={()=>setClicked(true)}/> :
@@ -57,7 +57,7 @@ function Navbar() {
             <div className={styles.sidebar}> 
                 <Link href={`/`}  className={styles.Link} onClick={()=>setClicked(false)}> <h1>Shop</h1> </Link>
                 <Link href={`/`}  className={styles.Link} onClick={()=>setClicked(false)}> <h1>Contact</h1> </Link>
-                <Link href={`/`}  className={styles.Link} onClick={()=>setClicked(false)}> <h1>Cart</h1> </Link> 
+                <Link href={`/products/cart`}  className={styles.Link} onClick={()=>setClicked(false)}> <h1>Cart</h1> </Link> 
             </div>  
         </>
       }

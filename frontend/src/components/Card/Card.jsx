@@ -10,6 +10,8 @@ function Card({item}) {
 
   const handleAddClick=(e)=>{
   e.preventDefault();
+  const path = location.pathname.split('/').pop();
+  if(path==='cart')return;
   const updatedCart=[...cart];
 
     for(let i=0;i<updatedCart.length;i++){
@@ -23,6 +25,8 @@ function Card({item}) {
 
   const handleRemoveClick=(e)=>{
     e.preventDefault();
+    const path = location.pathname.split('/').pop();
+    if(path==='cart')return;
     const updatedCart=[...cart];
   
       for(let i=0;i<updatedCart.length;i++){
