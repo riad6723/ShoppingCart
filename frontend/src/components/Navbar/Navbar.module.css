@@ -50,3 +50,38 @@
     background-color: rgb(235, 240, 245);
     border: 1px solid rgb(8, 8, 8);
 }
+
+.menueIcon{
+    display: none;
+}
+
+.sidebar{
+    display: none;
+}
+
+@media (max-width:600px) {
+    .nav{
+        display: none;
+    }
+
+    .menueIcon{
+        display: block;
+    }
+
+    .sidebar{
+        position: fixed;
+        width: 60vw;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: hsla(180, 13%, 85%, 0.9);
+    }
+    .sidebar h1{
+        font-size: 1rem;
+        font-weight: 500;
+        margin: 0.4rem;
+        color: rgb(2, 2, 2);
+    }
+}

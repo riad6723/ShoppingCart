@@ -24,8 +24,9 @@ function Product() {
       </div>
       <div className={styles.details}>
         <h2 className={styles.productName}>{item.name}</h2>
-        <p className={styles.productCategory}>{item.category}</p>
-        <p className={styles.productDescription}>{item.description}</p>
+        <h3 className={styles.productCategory}>{item.category}</h3>
+        <h4 className={styles.productDescription}>{item.description}</h4>
+        <h5 className={styles.price}> ${item.price} </h5>
       </div>
     </div>
     </div>

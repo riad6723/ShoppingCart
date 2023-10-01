@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { faShoppingCart, faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
 import styles from './Navbar.module.css'
 import Link from 'next/link'
 import axios from 'axios'
@@ -11,6 +11,7 @@ function Navbar() {
     const [searchKey,setSearchKey]=useState();
     const {cart,setProductsList}=useCartSizeContext();
     const [newProductsList, setNewProductsList]=useState([]);
+    const [clicked,setClicked]=useState(false);
 
     const handleSearch=(e)=>{
         setSearchKey(e.target.value);
@@ -50,6 +51,17 @@ function Navbar() {
 
         <Link href={'/products'} className={styles.Link}> <FontAwesomeIcon icon={faShoppingCart} className={styles.icon} /> <sup className={styles.sup}> {cart.length} </sup> </Link>
       </nav>
+      {
+        !clicked? <FontAwesomeIcon icon={faBars} className={styles.menueIcon} onClick={()=>setClicked(true)}/> :
+        <>  <FontAwesomeIcon icon={faXmark} className={styles.menueIcon} onClick={()=>setClicked(false)}/>
+            <div className={styles.sidebar}> 
+                <Link href={`/`}  className={styles.Link} onClick={()=>setClicked(false)}> <h1>Shop</h1> </Link>
+                <Link href={`/`}  className={styles.Link} onClick={()=>setClicked(false)}> <h1>Contact</h1> </Link>
+                <Link href={`/`}  className={styles.Link} onClick={()=>setClicked(false)}> <h1>Cart</h1> </Link> 
+            </div>  
+        </>
+      }
+      
     </div>
   )
 }
